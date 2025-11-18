@@ -5,42 +5,65 @@
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-geist: 'Geist', system-ui, sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-    --font-mona: 'Mona Sans', system-ui, sans-serif;
-    --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
-    --font-manrope: 'Manrope', system-ui, sans-serif;
+    --radius: 14px;
+    --neon: 167,139,250; /* violet */
   }
 
   html {
     font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    background: #020617; /* slate-950 */
   }
 
-  body {
-    @apply antialiased;
-  }
+  body { @apply antialiased bg-slate-950 text-slate-200; }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+@layer components {
+  .glass-metal {
+    @apply bg-gradient-to-br from-white/5 via-white/10 to-white/0 backdrop-blur-xl;
+  }
+  .chrome-edges {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      inset 0 -1px 0 rgba(0,0,0,0.4),
+      0 10px 30px rgba(0,0,0,0.45);
+    border-radius: var(--radius);
+  }
+  .metal-sheen {
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02) 30%, rgba(0,0,0,0.35) 60%, rgba(255,255,255,0.06));
+  }
+  .neon-underglow {
+    box-shadow:
+      0 8px 40px rgba(var(--neon), 0.18),
+      0 2px 12px rgba(0,0,0,0.6);
+  }
+  .futuristic-btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-slate-900;
+    background: radial-gradient(120% 120% at 0% 0%, rgba(var(--neon),0.35), rgba(var(--neon),0.2) 35%, transparent 60%), linear-gradient(180deg, #c4b5fd 0%, #a78bfa 60%, #7c3aed 100%);
+    color: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 10px 30px rgba(var(--neon),0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .futuristic-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 42px rgba(var(--neon),0.5); filter: saturate(1.1); }
+  .futuristic-btn:active { transform: translateY(0); }
+
+  .btn-outline-chrome {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-slate-200;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.4);
+    transition: all .2s ease;
+  }
+  .btn-outline-chrome:hover { border-color: rgba(var(--neon), 0.45); box-shadow: 0 8px 28px rgba(var(--neon),0.22), inset 0 1px 0 rgba(255,255,255,0.3); }
+
+  .neon-focus { box-shadow: 0 0 0 0 rgba(var(--neon),0.0); transition: box-shadow .2s ease; }
+  .neon-focus:focus { box-shadow: 0 0 0 3px rgba(var(--neon),0.25), 0 10px 30px rgba(var(--neon),0.2); }
+}
+
 @layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
-  }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
-  }
+  .section-fade { animation: sectionFade .8s ease both; }
 }
+
+@keyframes sectionFade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }

@@ -1,0 +1,53 @@
+
+> vibe-generated-app@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 226 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.20.102.233:3000/
+11:17:14 AM [vite] Pre-transform error: [postcss] /home/workspace/src/index.css:24:5: The `via-white/2` class does not exist. If `via-white/2` is a custom class, make sure it is defined within a `@layer` directive.
+11:17:15 AM [vite] ✨ new dependencies optimized: lucide-react, @splinetool/react-spline
+11:17:15 AM [vite] ✨ optimized dependencies changed. reloading
+11:17:15 AM [vite] Internal server error: [postcss] /home/workspace/src/index.css:24:5: The `via-white/2` class does not exist. If `via-white/2` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: /home/workspace/src/index.css:24:4
+  22 |  @layer components {
+  23 |    .glass-metal {
+  24 |      @apply bg-gradient-to-br from-white/5 via-white/2 to-white/0 backdrop-blur-xl;
+     |      ^
+  25 |    }
+  26 |    .chrome-edges {
+      at Input.error (/home/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+The file does not exist at "/home/workspace/node_modules/.vite/deps/chunk-I4MZPW7S.js?v=35394813" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+The file does not exist at "/home/workspace/node_modules/.vite/deps/chunk-XPR23Y44.js?v=35394813" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+11:17:18 AM [vite] Pre-transform error: [postcss] /home/workspace/src/index.css:24:5: The `via-white/2` class does not exist. If `via-white/2` is a custom class, make sure it is defined within a `@layer` directive.
+11:17:39 AM [vite] Internal server error: [postcss] /home/workspace/src/index.css:24:5: The `via-white/2` class does not exist. If `via-white/2` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: /home/workspace/src/index.css:24:4
+  22 |  @layer components {
+  23 |    .glass-metal {
+  24 |      @apply bg-gradient-to-br from-white/5 via-white/2 to-white/0 backdrop-blur-xl;
+     |      ^
+  25 |    }
+  26 |    .chrome-edges {
+      at Input.error (/home/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
